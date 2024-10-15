@@ -68,8 +68,6 @@ let sidekickTraits = function() {
 
 	description = '<h2>'+description +'!</h2>';
 
-	console.log(description);
-
 	return description;
 
 };
