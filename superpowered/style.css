@@ -312,6 +312,7 @@ form {
 		font-size: 32px;
 		font-weight: 500;
 		line-height: 1.35;
+		padding:0 45px;
 }
 
 .form-pal-copy h2 strong {
