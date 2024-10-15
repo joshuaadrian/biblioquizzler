@@ -74,17 +74,16 @@ select {
 }
 
 html {
-  --s: 125px; /* control the size*/
-  --c1: #e5ffe8;
-  --c2: #d4fcd9;
+  --s: 76px; /* control the size*/
+  --c1: #EDD143;
+  --c2: #F0CC16;
   
-  --_g: var(--c1) 90deg,var(--c2) 0 135deg,#0000 0;
   background:
-    conic-gradient(from  -45deg at calc(100%/3)   calc(100%/3)  ,var(--c1) 90deg,#0000 0 ),
-    conic-gradient(from -135deg at calc(100%/3)   calc(2*100%/3),var(--_g)),
-    conic-gradient(from  135deg at calc(2*100%/3) calc(2*100%/3),var(--_g)),
-    conic-gradient(from   45deg at calc(2*100%/3) calc(100%/3)  ,var(--_g),var(--c1) 0 225deg,var(--c2) 0);
-  background-size: var(--s) var(--s);
+    conic-gradient(
+      var(--c2) atan(2), var(--c1) 0 calc(180deg - atan(2)),
+      var(--c2) 0 180deg,var(--c1) 0 calc(180deg + atan(2)),
+      var(--c2) 0 calc(360deg - atan(2)),var(--c1) 0);
+  background-size: calc(2*var(--s)) var(--s);
 }
 
 body {
@@ -109,7 +108,7 @@ body > * {
 }
 
 h1 {
-  background-image: linear-gradient(to right, #049715, #0acb20, #049715);
+  background-image: linear-gradient(to right, pink, red, pink);
   -webkit-background-clip: text; 
   background-clip: text; 
   color: transparent;
@@ -198,13 +197,35 @@ form {
 }
 
 .form-check input:checked + label {
-	border:2px solid #0acb20;
-	background:#b6fbbe;
+	border:2px solid red;
+	background:pink;
 }
 
 .form-check label:hover {
-	border:2px solid #0acb20;
-	background:#b6fbbe;
+	border:2px solid red;
+	background:pink;
+}
+
+.form-checks.form-text .form-check {
+	grid-column: 1 / span 3;
+}
+
+.form-checks.form-text .form-check input {
+	position: static;
+	opacity: 1;
+	height: auto;
+  width: 100%;
+  padding: 15px;
+  border-radius: 3px;
+  border: 1px solid #aaa;
+}
+
+.form-checks.form-text .form-check label {
+	height:1px;
+	width:1px;
+	position: absolute;
+	left:-9999px;
+	opacity: 0;
 }
 
 .form-tabs {
@@ -280,6 +301,27 @@ form {
 	z-index: 2;
 }
 
+.form-pal {
+	height:100%;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+}
+
+.form-pal-copy h2 {
+		font-size: 32px;
+		font-weight: 500;
+		line-height: 1.35;
+}
+
+.form-pal-copy h2 strong {
+	text-decoration: underline;
+	text-decoration-color: red;
+	text-decoration-thickness: 4px;
+	font-weight: 700;
+}
+
+
 .form-pal.revealed .form-pal-copy {
 	opacity: 1;
 	transform:scale(1);
@@ -324,8 +366,8 @@ form {
 .form-actions button {
 	padding:0.5em 1em;
 	display: block;
-	border:2px solid #049715;
-	background:#049715;
+	border:2px solid red;
+	background:red;
 	border-radius: 10px;
 	color:#fff;
 }
@@ -367,9 +409,9 @@ form {
 }
 
 .form-progress span.answered {
-	background:#049715;
-	border:2px solid #049715;
-	color:#fff;
+	background:pink;
+	border:2px solid red;
+	color:black;
 }
 
 .form-actions .form-next:disabled,
