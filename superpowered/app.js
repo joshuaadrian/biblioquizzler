@@ -66,7 +66,7 @@ let sidekickTraits = function() {
 		description += traitsArray[index] + '<strong>' + item + '</strong> ';
 	});
 
-	description = '<h2>'+description +'</h2>';
+	description = '<h2>'+description +'!</h2>';
 
 	console.log(description);
 
