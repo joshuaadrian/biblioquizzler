@@ -417,10 +417,19 @@ form {
 
 .form-actions .form-next:disabled,
 .form-actions .form-submit:disabled {
-	opacity: 0.5;
+	opacity: 0.25;
 	cursor: not-allowed;
 }
 
-.form-actions .form-submit {
+.form-actions .form-submit,
+.form-actions .form-reset {
 	display: none;
+}
+
+.form-actions .form-reset.is-showing {
+	display: block;
+}
+
+.form-actions .form-submit.is-hiding {
+	display: none !important;
 }

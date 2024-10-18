@@ -1,6 +1,7 @@
 const form = document.querySelector('#form-survey');
 const next = document.querySelector('#form-next');
 const submit = document.querySelector('#form-submit');
+const reset = document.querySelector('#form-reset');
 const tabs = document.querySelector('#form-tabs');
 const pal = document.querySelector('#form-pal');
 const palImage = document.querySelector('#form-pal-image');
@@ -83,9 +84,17 @@ if (gift) {
 		palCopy.innerHTML = traits;
 		pal.classList.add('revealed');
 		submit.disabled = true;
+		submit.classList.add('is-hiding');
+		reset.classList.add('is-showing');
 	});
 }
+if (reset) {
 
+	reset.addEventListener('click', (e) => {
+		window.location.replace("https://biblioquizzler.net/superpowered"); 
+	});
+
+}
 
 if (submit) {
 
@@ -99,6 +108,8 @@ if (submit) {
 		palCopy.innerHTML = traits;
 		pal.classList.add('revealed');
 		submit.disabled = true;
+		submit.classList.add('is-hiding');
+		reset.classList.add('is-showing');
 	});
 
 }
